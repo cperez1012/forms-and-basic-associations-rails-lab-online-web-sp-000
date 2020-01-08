@@ -25,4 +25,8 @@ class Song < ActiveRecord::Base
       self.notes.build(content: content) unless content.empty?
     end
   end
+
+  def note_contents
+    notes.collect {|note| note.content}
+  end
 end
